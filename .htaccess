@@ -1,0 +1,13 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^$ index.php
+#RewriteRule ^students   students/students.php
+RewriteRule ^students/([0-9]*)$   students/students.php?id=$1
+
+
+
+
+
+
