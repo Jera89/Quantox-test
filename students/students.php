@@ -13,7 +13,12 @@ $id  = $_REQUEST['id'];
 
 $student = new Student($sqli);
 $student->id = $id;
-$student = $student->load();
+if($student = $student->load()){
+    header("Content-Type: application/json");
+    header("HTTP/1.0 404 Not Found");
+    echo Api::errorResponse("Not Found", [], 404);
+    exit;
+}
 $student->getGrades();
 $student->getBoard();
 

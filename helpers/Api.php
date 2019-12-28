@@ -23,7 +23,7 @@ class Api {
         
     }
     
-    public static function errorResponse(string $message, array $errors, int $code = 422)
+    public static function errorResponse(string $message, array $errors, int $code = 422, $type = 'json')
     {
         $response = [
             "info" => [
