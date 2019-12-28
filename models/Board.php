@@ -1,6 +1,6 @@
 <?php
 
-class Grade {
+class Board {
     
     private $table_name;
     private $sqli;
