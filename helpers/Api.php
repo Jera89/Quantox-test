@@ -2,7 +2,7 @@
 
 class Api {
     
-    public static function response(string $message = "", array $data, int $code = 200, $type = 'json')
+    public static function response(string $message = "", $data, int $code = 200, $type = 'json')
     {
         $response = [
             "info" => [
@@ -39,7 +39,7 @@ class Api {
         if($type == 'json'){
             return json_encode($response);
         }
-        $xml = new SimpleXMLElement('');
+        $xml = new \SimpleXMLElement('');
         return array_walk_recursive($response, array ($xml,'addChild'));
         
     }
